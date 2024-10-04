@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            perspective: 1000px;
+            /* Adiciona perspectiva ao container */
+        }
+
+        .card {
+            width: 150px;
+            height: 150px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            transition: transform 0.6s;
+            cursor: pointer;
+            position: relative;
+            transform-style: preserve-3d;
+            /* Permite a preservação da 3D */
+        }
+
+        .card:hover {
+            transform: rotateY(180deg);
+            /* Gira o cartão ao passar o mouse */
+        }
+
+        .card .face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            /* Oculta o lado oposto */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 8px;
+        }
+
+        .card .front {
+            background-color: #fff;
+        }
+
+        .card .back {
+            background-color: #009688;
+            color: white;
+            transform: rotateY(180deg);
+            /* Vira o lado de trás para ser ocultado inicialmente */
+        }
+
+        .card {
+            width: 190px;
+            height: 120px;
+            padding: 0.5rem;
+            background: rgb(255, 0, 0);
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+            border-bottom: 3px solid rgba(0, 0, 0, 0.712);
+            border-left: 2px rgba(255, 255, 255, 0.545) outset;
+            box-shadow: -40px 50px 30px rgba(255, 51, 0, 0.575);
+            /* transform: skewX(10deg); */
+            transition: .4s;
+            overflow: hidden;
+            color: white;
+        }
+
+        .card:hover {
+            height: 254px;
+            transform: skew(0deg);
+        }
+
+        .align {
+            padding: 1cqmin;
+            display: flex;
+            flex-direction: row;
+            gap: 5px;
+            align-self: flex-start;
+        }
+
+        .card h1 {
+            text-align: center;
+            margin: 3rem;
+            color: rgb(255, 255, 255);
+            text-shadow: -10px 5px 10px rgb(255, 255, 255);
+        }
+
+        .card p {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="card">
+                <h1>A+</h1>
+                <p>Pode Receber de:</br>A+, A-, O+, O-
+                </br>Pode Doar para: A+, A-, AB+, AB-
+                </p>
+                <div class="face back">Informação sobre o Card 2</div>
+            </div>
+        </div>
+        <div id="card2" class="card">
+            <div class="face front">AB+</div>
+            <div class="face back">Informação sobre o Card 2</div>
+        </div>
+        <div id="card3" class="card">
+            <div class="face front">O+</div>
+            <div class="face back">Informação sobre o Card 3</div>
+        </div>
+    </div>
+
+    <script>
+        // Você pode adicionar algum script aqui, se necessário
+    </script>
+
+</body>
+
+</html>
